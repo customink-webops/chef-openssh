@@ -1,0 +1,17 @@
+source :rubygems
+
+gem 'chef'
+gem 'chefspec', git:'git://github.com/acrmp/chefspec.git'
+gem 'fauxhai'
+gem 'foodcritic', '~> 1.4.0'
+gem 'git'
+gem 'knife-dwim'
+gem 'knife-ec2'
+gem 'knife-essentials'
+gem 'knife-ohno', '~> 0.1.0'
+gem 'knife-spork', git:'git://github.com/customink-webops/knife-spork.git'
+gem 'health_inspector'
+gem 'pry'
+gem 'spiceweasel', '>=1.1.2'
+gem 'strainer', git:'git://github.com/customink/strainer.git'
+gem 'tinder'
