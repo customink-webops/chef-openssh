@@ -20,8 +20,8 @@ describe recipe do
       node['mongodb']['binaries'] = @mongo_binary_path
       node['mongodb']['run_backups'] = true
     end
-    # @chef_run = ChefSpec::ChefRunner.new.converge(recipe)
-    @chef_run = ChefSpec::ChefRunner.new
+    @chef_run = ChefSpec::ChefRunner.new.converge(recipe)
+    # @chef_run = ChefSpec::ChefRunner.new
   end
   
   before :each do
@@ -33,11 +33,15 @@ describe recipe do
     #       node['mongodb']['binaries'] = @mongo_binary_path
     #       node['mongodb']['run_backups'] = true
     #     end
-    @chef_run.converge(recipe)
+    #@chef_run.converge(recipe)
   end
   
-  it "Should start varnishncsa" do
+  it "Should start ssh" do
     @chef_run.should start_service 'ssh'
+  end
+  
+  it "Should create /etc/ssh/sshd_config" do
+    @chef_run.should create_file "/etc/ssh/sshd_config"
   end
 
 end
